@@ -21,3 +21,9 @@ class StackManager:
             temp = self.top.value
             self.top = self.top.next
         return temp
+
+    def add_sweepstakes(self, sweepstake):
+        self.StackManager.push(sweepstake)
+
+    def get_sweepstake(self, sweepstake):
+        self.StackManager.pop(sweepstake)

@@ -22,3 +22,12 @@ def ask_registration_info():
         except: ValueError
     return regis_num
 
+def ask_firm_type_of_data_structure():
+    answer = "Gibberish"
+    while answer != "a" or answer != "b":
+        if answer == "y":
+            return True
+        if answer == "n":
+            return False
+        else:
+            answer = input("Would you like to use a (a)queue manager or (b)stack manager (a/b)  ")
