@@ -1,0 +1,2 @@
+from contestants import Contestants
+
