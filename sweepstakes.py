@@ -1,5 +1,6 @@
 from contestants import Contestant
 import random
+import user_interface
 
 class SweepStakes:
     def __init__(self):
@@ -9,12 +10,13 @@ class SweepStakes:
 
     def register_contestant(self):
 
-        first_name = input("What is your first name?")
-        last_name = input("What is your last name?")
-        email_address = input("What is your email address?")
-        registration_number = input("Input the numbers of your driver's license ID Number. ONLY NUMBERS! No letters.")
+        first_name = user_interface.ask_first_name()
+        last_name = user_interface.ask_last_name()
+        email_address = user_interface.ask_email_address()
+        registration_number = user_interface.ask_registration_info()
         contestant = Contestant(first_name, last_name, email_address, registration_number)
-        self.contestants.add(contestant)
+        self.contestants.append(contestant)
+        print(self.contestants)
 
     def pick_winner(self):
         num = random.randint(0, len(self.contestants))

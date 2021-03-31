@@ -1,4 +1,5 @@
 
+
 class Contestant:
     def __init__(self, first_name, last_name, email_address, registration_number):
         self.contestant = {
@@ -10,6 +11,6 @@ class Contestant:
 
         }
 
-
-
-
+    def notify(self, picked_winner):
+        print(picked_winner["first_name"], picked_winner["last_name"], "WINS!")
+        #email the winner here if you can....
