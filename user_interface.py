@@ -25,9 +25,21 @@ def ask_registration_info():
 def ask_firm_type_of_data_structure():
     answer = "Gibberish"
     while answer != "a" or answer != "b":
+        if answer == "a":
+            return True
+        if answer == "b":
+            return False
+        else:
+            answer = input("Would you like to use a (a)queue manager or (b)stack manager (a/b)  ")
+
+
+def add_more_contestants():
+    answer = "Supercalafregalisticsexpialadotious!"
+    while answer != "y" or answer != "n":
         if answer == "y":
             return True
         if answer == "n":
             return False
         else:
-            answer = input("Would you like to use a (a)queue manager or (b)stack manager (a/b)  ")
+            answer = input("Would you like to add another contestant? (y/n) ")
+

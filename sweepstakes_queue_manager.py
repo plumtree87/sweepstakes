@@ -22,3 +22,9 @@ class QueueManager:
         value = self.head.value
         self.head - self.head.next
         return value
+
+    def add_sweepstakes(self, sweepstake):
+        self.StackManager.enqueue(sweepstake)
+
+    def get_sweepstake(self, sweepstake):
+        self.StackManager.enqueue(sweepstake)
