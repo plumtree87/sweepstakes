@@ -10,6 +10,8 @@ if __name__ == '__main__':
     sweepstakes = []
     while True:
         sweepstake = Marketing_Firm(stack_or_queue).add_new_sweepstake(stack_or_queue)
+        if sweepstake[1] == None:
+            print(sweepstake)
         if sweepstake[1] == True:
             sweepstake[0].queue
         if sweepstake[1] == False:

@@ -23,7 +23,7 @@ class Marketing_Firm:
             self.manage_with_stack(sweepstakes, stack)
         winner = sweepstakes.pick_winner()
         sweepstakes.print_contestant_info(winner)
-        another = user_interface.create_new_sweepstake()
+
         return stack, False
 
 
