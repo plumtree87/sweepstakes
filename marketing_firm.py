@@ -30,6 +30,7 @@ class Marketing_Firm:
                 sweepstakes.register_contestant()
                 add_contestants = user_interface.add_more_contestants()
 
+
     def manage_with_stack(self, sweepstakes):
         self.manager = StackManager()
         add_contestants = True
