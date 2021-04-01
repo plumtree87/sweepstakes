@@ -4,11 +4,11 @@ import user_interface
 from sweepstakes_queue_manager import QueueManager
 from sweepstakes_stack_manager import StackManager
 
+
 class SweepStakes:
     def __init__(self):
         self.contestants = {}
         self.registration_count = 1
-
 
     def register_contestant(self):
 
@@ -19,10 +19,9 @@ class SweepStakes:
         contestant = Contestant(first_name, last_name, email_address, registration_number)
         self.contestants[contestant.registration_number] = contestant
 
-
     def pick_winner(self):
-        num = random.randint(0, len(self.contestants) - 1)
-        return self.contestants[num]
+        contestant = random.choice(list(self.contestants.values()))
+        return contestant
 
     def print_contestant_info(self, contestant):
         print(contestant.first_name, "You Win")
