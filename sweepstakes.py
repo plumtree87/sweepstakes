@@ -24,4 +24,4 @@ class SweepStakes:
         return self.contestants[num]
 
     def print_contestant_info(self, contestant):
-        print(contestant.first_name)
+        print(contestant.first_name, "You Win")
