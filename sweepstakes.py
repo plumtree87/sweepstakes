@@ -8,7 +8,6 @@ from sweepstakes_stack_manager import StackManager
 class SweepStakes:
     def __init__(self):
         self.contestants = {}
-        self.registration_count = 1
 
     def register_contestant(self):
 

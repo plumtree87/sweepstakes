@@ -6,25 +6,25 @@ from Stack import Stack
 from myQueue import Queue
 
 class Marketing_Firm:
-    def __init__(self):
-        self.manager = None
+    def __init__(self, stack_or_queue):
+        self.manager = stack_or_queue
 
     def create_sweepstakes(self):
         sweepstakes = SweepStakes()
-        stack_or_queue = user_interface.ask_firm_type_of_data_structure()
-        if stack_or_queue == True:
+        if self.manager == True:
             queue = Queue()
             self.manage_with_queue(sweepstakes, queue)
             winner = sweepstakes.pick_winner()
             sweepstakes.print_contestant_info(winner)
-            print(queue)
+            return queue, True
 
-        else:
+        if self.manager == False:
             stack = Stack()
             self.manage_with_stack(sweepstakes, stack)
         winner = sweepstakes.pick_winner()
         sweepstakes.print_contestant_info(winner)
-        print(stack)
+        another = user_interface.create_new_sweepstake()
+        return stack, False
 
 
     def manage_with_queue(self, sweepstakes, queue):
@@ -50,3 +50,14 @@ class Marketing_Firm:
             else:
                 sweepstakes.register_contestant()
                 add_contestants = user_interface.add_more_contestants()
+
+    def add_new_sweepstake(self, stack_or_queue):
+        keep_creating_new_sweepstakes = "Nothing yet"
+        while keep_creating_new_sweepstakes != False:
+            if keep_creating_new_sweepstakes == True:
+                firm = Marketing_Firm(stack_or_queue)
+                managed_sweepstakes = firm.create_sweepstakes()
+                return managed_sweepstakes
+            else:
+                keep_creating_new_sweepstakes = user_interface.create_new_sweepstake()
+
