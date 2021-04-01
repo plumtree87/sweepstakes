@@ -7,4 +7,4 @@ class Queue:
         self.queue.append(value_input)
 
     def dequeue(self):
-        self.queue[0].remove()
+        return self.queue[0].remove()

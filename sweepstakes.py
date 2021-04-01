@@ -18,9 +18,10 @@ class SweepStakes:
         contestant = Contestant(first_name, last_name, email_address, registration_number)
         self.contestants[contestant.registration_number] = contestant
 
+
     def pick_winner(self):
         contestant = random.choice(list(self.contestants.values()))
         return contestant
 
     def print_contestant_info(self, contestant):
-        print(contestant.first_name, "You Win")
+        print("\n", contestant.first_name, "You Win")

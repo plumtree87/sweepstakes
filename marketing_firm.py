@@ -16,7 +16,7 @@ class Marketing_Firm:
             self.manage_with_queue(sweepstakes, queue)
             winner = sweepstakes.pick_winner()
             sweepstakes.print_contestant_info(winner)
-            return queue, True
+            return queue
 
         if self.manager == False:
             stack = Stack()
@@ -24,7 +24,7 @@ class Marketing_Firm:
         winner = sweepstakes.pick_winner()
         sweepstakes.print_contestant_info(winner)
 
-        return stack, False
+        return stack
 
 
     def manage_with_queue(self, sweepstakes, queue):
@@ -38,6 +38,7 @@ class Marketing_Firm:
             else:
                 sweepstakes.register_contestant()
                 add_contestants = user_interface.add_more_contestants()
+        queue.enqueue(sweepstakes)
 
 
     def manage_with_stack(self, sweepstakes, stack):
@@ -50,6 +51,8 @@ class Marketing_Firm:
             else:
                 sweepstakes.register_contestant()
                 add_contestants = user_interface.add_more_contestants()
+                self.manager.add_sweepstakes(add_contestants)
+        stack.push(sweepstakes)
 
     def add_new_sweepstake(self, stack_or_queue):
         keep_creating_new_sweepstakes = "Nothing yet"
