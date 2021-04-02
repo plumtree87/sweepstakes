@@ -7,6 +7,7 @@ from myQueue import Queue
 
 #I am using Dependancy injection here in the marketing firm, which allows each instantiation of
 #marketing firm to have pre-decided through user input, whether they will use a stack or queue
+#which is a benefit to the user to decide the manager before they instantiate the marketing firm.
 
 class Marketing_Firm:
     def __init__(self, stack_or_queue):
