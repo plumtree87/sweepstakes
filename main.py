@@ -7,7 +7,7 @@ import user_interface
 
 if __name__ == '__main__':
     stack_or_queue = user_interface.ask_firm_type_of_data_structure()
-    sweepstake = Marketing_Firm(stack_or_queue).add_new_sweepstake(stack_or_queue)
+    sweepstake = Marketing_Firm(stack_or_queue).add_new_sweepstake()
 
 
 

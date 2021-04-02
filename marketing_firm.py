@@ -5,6 +5,9 @@ from sweepstakes_stack_manager import StackManager
 from Stack import Stack
 from myQueue import Queue
 
+#I am using Dependancy injection here in the marketing firm, which allows each instantiation of
+#marketing firm to have pre-decided through user input, whether they will use a stack or queue
+
 class Marketing_Firm:
     def __init__(self, stack_or_queue):
         self.manager = stack_or_queue
@@ -23,7 +26,6 @@ class Marketing_Firm:
             self.manage_with_stack(sweepstakes, stack)
         winner = sweepstakes.pick_winner()
         sweepstakes.print_contestant_info(winner)
-
         return stack
 
 
@@ -54,11 +56,11 @@ class Marketing_Firm:
                 self.manager.add_sweepstakes(add_contestants)
         stack.push(sweepstakes)
 
-    def add_new_sweepstake(self, stack_or_queue):
+    def add_new_sweepstake(self):
         keep_creating_new_sweepstakes = "Nothing yet"
         while keep_creating_new_sweepstakes != False:
             if keep_creating_new_sweepstakes == True:
-                firm = Marketing_Firm(stack_or_queue)
+                firm = Marketing_Firm(self.manager)
                 managed_sweepstakes = firm.create_sweepstakes()
                 return managed_sweepstakes
             else:
